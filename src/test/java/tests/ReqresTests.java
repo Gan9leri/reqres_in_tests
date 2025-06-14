@@ -11,6 +11,7 @@ import static org.hamcrest.CoreMatchers.is;
 @Tag("api")
 public class ReqresTests extends TestBase{
 
+    @DisplayName("Проверка шапки ответа")
     @Test
     void getListUsersTest(){
         given().log().all()
