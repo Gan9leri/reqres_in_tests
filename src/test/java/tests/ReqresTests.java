@@ -1,5 +1,4 @@
 package tests;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,8 @@ public class ReqresTests extends TestBase{
 
     @DisplayName("Проверка шапки ответа")
     @Test
-    void getListUsersTest(){
+    void getListUsersPageTest(){
+
         given().log().all()
                 .when()
                 .header("x-api-key","reqres-free-v1")
@@ -22,6 +22,7 @@ public class ReqresTests extends TestBase{
                 .statusCode(200)
                 .body("page", is(2))
                 .body("per_page", is(6))
-                .body("total", is(12));
+                .body("total", is(12))
+                .body("total_pages", is(2));
     }
 }
